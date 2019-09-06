@@ -12,7 +12,7 @@ export default class CenteredTree extends React.Component {
   state = {
     root: "",
     treeData: {},
-    data: ["UNICEF", "Project", "Connect", "map", "every", "school", "blockchain", "demo"]
+    data: ["2GiB", "2GiB", "4.2GiB", "4.2GiB", "1.2GiB", "1.3GiB", "1.8GiB", "1.8GiB"]
   };
 
   makeTree = data => {
@@ -46,6 +46,7 @@ export default class CenteredTree extends React.Component {
   render() {
     return (
       <div style={containerStyles} ref={tc => (this.treeContainer = tc)}>
+        <h4>Schools and ISPs report their usage on the Ethereum blockchain.</h4>
         <Tree
           data={this.state.treeData}
           translate={this.state.translate}
@@ -56,10 +57,7 @@ export default class CenteredTree extends React.Component {
           pathFunc="straight"
         />
         <div className="message-content">
-          <h3>The message hash is:</h3>
-          <h1 className="">{this.state.root}</h1>
-          <ChipArea data={this.state.data} makeTree={this.makeTree} />
-          <h3>Drag and drop the words to change the cryptographic message.</h3>
+          <h4>Try changing the values and see how the blockchain changes.</h4>
         </div>
       </div>
     );
